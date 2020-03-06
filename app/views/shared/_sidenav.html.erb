@@ -1,0 +1,6 @@
+<p><%= link_to "Home Page", root_path %></p>
+<% if user_signed_in? %>
+<p><%= link_to "Buy Produce", products_path %></p>
+<p><%= link_to "Sell Produce", new_product_path %></p>
+<% end %>
+<p><%= link_to "Browse Farms" %></p>
