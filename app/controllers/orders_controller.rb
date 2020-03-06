@@ -13,12 +13,25 @@ class OrdersController < ApplicationController
     payment_intent_data: {
       metadata: {
         user_id: current_user.id,
-        book_id: @product.id
+        product_id: @product.id
       }
     },
     success_url: "#{root_url}orders/complete",
     cancel_url: "#{root_url}",
     )
+  end
+
+  def webhook
+    payment_id = params[:data][:object][:payment_intent]
+    payment = Stripe::PaymentIntent.retrieve(payment_id)
+    product_id = payment.metadata.product_id
+    user_id = payment.metadata.user_id
+    p "product id #{product_id}"
+    p "user id #{user_id}"
+    render plain: "Success"
+  end
+ 
+  def complete
   end
  
 end
