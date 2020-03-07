@@ -20,6 +20,10 @@
   <%= @product.farm %>
 </p>
 
+  <% if @product.picture.attached? %>
+    <%= image_tag @product.picture %>
+  <% end %>
+  
 <%= link_to "Buy now", new_order_path(product_id: @product.id) %>
 <%= link_to 'Back', products_path %>
   <% if current_user.id == @product.user_id %>

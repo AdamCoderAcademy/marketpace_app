@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
 
+  # New Product Method to add products
   def new
     @product = Product.find(params[:product_id])
     @session = Stripe::Checkout::Session.create(
@@ -21,6 +22,7 @@ class OrdersController < ApplicationController
     )
   end
 
+  # Method to check payment is succesful
   def webhook
     payment_id = params[:data][:object][:payment_intent]
     payment = Stripe::PaymentIntent.retrieve(payment_id)

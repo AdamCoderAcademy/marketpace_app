@@ -1,3 +1,4 @@
+# application routes 
 Rails.application.routes.draw do
   get 'orders/new'
   resources :products
