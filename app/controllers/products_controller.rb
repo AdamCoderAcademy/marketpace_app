@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @reviews = @product.reviews
+    @rating = Review.get_average_rating(@product)
   end
 
   # GET /products/new

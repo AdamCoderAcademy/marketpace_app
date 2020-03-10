@@ -12,9 +12,23 @@
   <body>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-        
-        <%= render "shared/topnav" %>
-        <%= render "shared/sidenav" %>
-    <%= yield %>
+
+        <%# top navigation  %>
+        <div class="row float-right">
+          <%= render "shared/topnav" %>
+        </div>
+
+        <%# side navigation %>
+        <div class="row">
+          <div class="col-2">
+            <%= render "shared/sidenav" %>
+          </div>
+        </div>
+
+    <%# main page container  %>
+    <div class="container"> 
+      <%= yield %>
+    </div>
+
   </body>
 </html>
