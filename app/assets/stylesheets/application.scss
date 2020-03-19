@@ -11,20 +11,52 @@
  * It is generally better to create a new file per style scope.
  *
  */
- 
+
  @import "bootstrap";
  body 
 
  {
     min-height: 100vh;
-   //  background-image: url(image_path('farm.jpeg'));
+    width: 90%;
+    background-image: url(image_path('farm.jpeg'));
     background-repeat: repeat;
     background-position: right bottom;
     background-attachment: fixed;
  }
- 
+//  front page text container 
  .container{
     background-color: white;
-    opacity: 90%;
+    opacity: 95%;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 60%;
  }
- 
+//  sidenav styling 
+ .sidenav{
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin-bottom: 100px;
+    text-align: center;
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    opacity: 92%;
+    margin-left: 10px;
+ }
+// top nav styling 
+ .top-nav{
+   background-color: whitesmoke;
+   border-radius: 10px;
+   border: 2px solid black;
+   margin-bottom: 100px;
+   text-align: center;
+   opacity: 92%;
+   margin-right: 10px;
+ }
+
+ img {
+   max-width: 100%;
+   height: auto;
+   border-radius: 10px;
+ }
